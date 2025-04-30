@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #cart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .box img:hover {
+            transform: scale(1.05);
+        }
+
+        .box h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .empty-message {
+            text-align: center;
+            font-size: 1.5em;
+            color: #888;
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .empty-message.show {
+            opacity: 1;
+            animation: fadeIn 1s;
+        }
+
+        .buy-selected {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buy-selected button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-selected button:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div id="cart-container">
+        <!-- Cart items will be displayed here -->
+    </div>
+    <div id="empty-message" class="empty-message">
+        Your cart is empty.
+    </div>
+    <div class="buy-selected">
+        <button onclick="buySelectedItems()">Buy Selected Items</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const cartContainer = document.getElementById('cart-container');
+            const emptyMessage = document.getElementById('empty-message');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function displayCart() {
+                cartContainer.innerHTML = '';
+                if (cart.length === 0) {
+                    emptyMessage.classList.add('show');
+                } else {
+                    emptyMessage.classList.remove('show');
+                    cart.forEach(item => {
+                        const cartItem = document.createElement('div');
+                        cartItem.classList.add('box');
+                        
+                        const img = document.createElement('img');
+                        img.src = item.image;
+                        img.alt = item.title;
+                        img.width = 150;
+                        img.height = 120;
+                        
+                        const title = document.createElement('h3');
+                        title.innerText = item.title;
+
+                        const removeButton = document.createElement('button');
+                        removeButton.innerText = 'Remove from Cart';
+                        removeButton.onclick = function() {
+                            removeFromCart(item);
+                        };
+
+                        const buyNowButton = document.createElement('button');
+                        buyNowButton.innerText = 'Buy Now';
+                        buyNowButton.onclick = function() {
+                            window.location.href = 'payment.html';
+                        };
+
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.classList.add('item-checkbox');
+                        checkbox.value = JSON.stringify(item);
+                        
+                        cartItem.appendChild(checkbox);
+                        cartItem.appendChild(img);
+                        cartItem.appendChild(title);
+                        cartItem.appendChild(removeButton);
+                        cartItem.appendChild(buyNowButton);
+                        cartContainer.appendChild(cartItem);
+                    });
+                }
+            }
+
+            function removeFromCart(itemToRemove) {
+                cart = cart.filter(item => item.title !== itemToRemove.title || item.image !== itemToRemove.image);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCart();
+            }
+
+            displayCart();
+        };
+
+        function buySelectedItems() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            const selectedItems = [];
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedItems.push(JSON.parse(checkbox.value));
+                }
+            });
+            if (selectedItems.length > 0) {
+                localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+                window.location.href = 'payment.html';
+            } else {
+                alert('Please select at least one item to buy.');
+            }
+        }
+    </script>
+</body>
+</html>

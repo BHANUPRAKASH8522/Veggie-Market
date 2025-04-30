@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style7.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Fruit Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .categories {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .heading span {
+            color: #f6f4f3;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        
+        .box img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .box img:hover {
+            transform: scale(1.05);
+        }
+
+        .box h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .box p {
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+
+        .box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .box button a {
+            color: white;
+            text-decoration: none;
+        }
+
+         /* Tablet Devices */
+@media (max-width: 768px) {
+    .categories .box-container {
+        display: block;
+        padding: 10px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .heading span {
+        padding: .5rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    button {
+        width: 90%;
+        margin-left: 0;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .categories .box-container {
+        padding: 5px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .heading span {
+        padding: .5rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Smallest Devices (Landscape phones like 360px width) */
+@media (max-width: 360px) {
+    .categories .box-container .box {
+        padding: 0.5rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .heading span {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="categories" id="categories">
+        <h1 class="heading">Dry Fruit <span>Section</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="dry1.png" alt="Almonds" width="130" height="120">
+                <h3>Almonds</h3>
+                <h3>1-KG 680/-</h3>
+                <p>Upto 12% Off</p>
+                <button onclick="addToCart('dry1.png', 'Almonds',)">Add to Cart</button>
+                <button onclick="buyNow('dry1.png', 'Almonds')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dry2.png" alt="Pistachios" width="130" height="120">
+                <h3>Pistachios</h3>
+                <h3>1-KG 1400/-</h3>
+                <p>Upto 15% Off</p>
+                <button onclick="addToCart('dry2.png', 'Pistachios')">Add to Cart</button>
+                <button onclick="buyNow('dry2.png', 'Pistachios')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dry3.png" alt="Dates" width="130" height="120">
+                <h3>Dates</h3>
+                <h3>1-KG 358/-</h3>
+                <p>Upto 20% Off</p>
+                <button onclick="addToCart('dry3.png', 'Dates')">Add to Cart</button>
+                <button onclick="buyNow('dry3.png', 'Dates')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dry4.png" alt="Cashews" width="140" height="120">
+                <h3>Cashews</h3>
+                <h3>1-KG 1399/-</h3>
+                <p>Upto 15% Off</p>
+                <button onclick="addToCart('dry4.png', 'Cashews')">Add to Cart</button>
+                <button onclick="buyNow('dry4.png', 'Cashews')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="dry5.png" alt="Walnuts" width="140" height="120">
+                <h3>Walnuts</h3>
+                <h3>1-KG 1599/-</h3>
+                <p>Upto 10% Off</p>
+                <button onclick="addToCart('dry5.png', 'Walnuts',)">Add to Cart</button>
+                <button onclick="buyNow('dry5.png', 'Walnuts')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="dry6.png" alt="Hazelnuts" width="140" height="120">
+                <h3>Hazelnuts</h3>
+                <h3>1-KG 1699/-</h3>
+                <p>Upto 20% Off</p>
+                <button onclick="addToCart('dry6.png', 'Hazelnuts',)">Add to Cart</button>
+                <button onclick="buyNow('dry6.png', 'Hazelnuts')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dry7.png" alt="Anjeer" width="140" height="120">
+                <h3>Anjeer</h3>
+                <h3>1-KG 1099/-</h3>
+                <p>Upto 25% Off</p>
+                <button onclick="addToCart('dry7.png', 'Anjeer',)">Add to Cart</button>
+                <button onclick="buyNow('dry7.png', 'FAnjeer')">Buy Now</button>
+            </div>
+
+
+            <div class="box">
+                <img src="dry8.png" alt="Figs" width="140" height="130">
+                <h3>Figs</h3>
+                <h3>1-KG 1519/-</h3>
+                <p>Upto 28% Off</p>
+                <button onclick="addToCart('dry8.png', 'Figs',)">Add to Cart</button>
+                <button onclick="buyNow('dry8.png', 'Figs')">Buy Now</button>
+            </div>
+            <!-- Add other items similarly -->
+        </div>
+    </section>
+
+    <script>
+        function addToCart(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'test2.html';
+        }
+
+        function buyNow(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    animation: slideDown 1s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    animation: textFadeIn 2s ease-in-out;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+    animation: textFadeIn 2s ease-in-out;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    animation: inputFocus 1s ease-in-out infinite alternate;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    animation: buttonHover 1.5s ease-in-out infinite alternate;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes inputFocus {
+    from { border-color: #ccc; }
+    to { border-color: #007BFF; }
+}
+
+@keyframes buttonHover {
+    from { background-color: #007BFF; }
+    to { background-color: #0056b3; }
+}
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Reset Password</h2>
+        <p>Please enter your new password below.</p>
+        <form id="reset-password-form">
+            <div class="input-group">
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" name="new-password">
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+            <button type="submit"><a href="UI log.html" style="text-decoration: none;">Submit</button></a>
+        </form>
+    </div>
+</body>
+</html>

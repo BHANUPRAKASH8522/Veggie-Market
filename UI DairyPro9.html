@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style7.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Products Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .categories {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .heading span {
+            color: #f6f4f3;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .box img:hover {
+            transform: scale(1.05);
+        }
+
+        .box h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .box p {
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+
+        .box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .box button a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* Tablet Devices */
+@media (max-width: 768px) {
+    .categories .box-container {
+        display: block;
+        padding: 10px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .heading span {
+        padding: .5rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    button {
+        width: 90%;
+        margin-left: 0;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .categories .box-container {
+        padding: 5px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .heading span {
+        padding: .5rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Smallest Devices (Landscape phones like 360px width) */
+@media (max-width: 360px) {
+    .categories .box-container .box {
+        padding: 0.5rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .heading span {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <section class="categories" id="categories">
+        <h1 class="heading">Dairy Products <span>Section</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="dairy1.png" alt="Butter" width="120" height="120">
+                <h3>Butter</h3>
+                <h3>1-KG 590/-</h3>
+                <p>Upto 12% Off</p>
+                <button onclick="addToCart('dairy1.png', 'Butter',)">Add to Cart</button>
+                <button onclick="buyNow('dairy1.png', 'Butter')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dairy2.png" alt="Milk" width="110" height="120">
+                <h3>Milk</h3>
+                <h3>1-Liter 60/-</h3>
+                <p>Upto 35% Off</p>
+                <button onclick="addToCart('dairy2.png', 'Milk')">Add to Cart</button>
+                <button onclick="buyNow('dairy2.png', 'Milk')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dairy3.png" alt="Milk Shake" width="130" height="120">
+                <h3>Milk Shake</h3>
+                <h3>100ml 35/-</h3>
+                <p>Upto 20% Off</p>
+                <button onclick="addToCart('dairy3.png', 'Milk Shake')">Add to Cart</button>
+                <button onclick="buyNow('dairy3.png', 'Milk Shake')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dairy4.png" alt="Ghee" width="120" height="120">
+                <h3>Ghee</h3>
+                <h3>1-KG 750/-</h3>
+                <p>Upto 45% Off</p>
+                <button onclick="addToCart('dairy4.png', 'Ghee')">Add to Cart</button>
+                <button onclick="buyNow('dairy4.png', 'Ghee')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="dairy5.png" alt="Curd" width="140" height="120">
+                <h3>Curd</h3>
+                <h3>1-KG 60/-</h3>
+                <p>Upto 30% Off</p>
+                <button onclick="addToCart('dairy5.png', 'Curd',)">Add to Cart</button>
+                <button onclick="buyNow('dairy5.png', 'Curd')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="dairy6.png" alt="Hot Chocolate" width="140" height="120">
+                <h3>Hot Chocolate</h3>
+                <h3>1-KG 749/-</h3>
+                <p>Upto 50% Off</p>
+                <button onclick="addToCart('dairy6.png', 'Hot Chocolate',)">Add to Cart</button>
+                <button onclick="buyNow('dairy6.png', 'Hot Chocolate')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="dairy7.png" alt="Feta" width="140" height="120">
+                <h3>Feta</h3>
+                <h3>1-KG 845/-</h3>
+                <p>Upto 35% Off</p>
+                <button onclick="addToCart('dairy7.png', 'Feta',)">Add to Cart</button>
+                <button onclick="buyNow('dairy7.png', 'Feta')">Buy Now</button>
+            </div>
+
+
+            <div class="box">
+                <img src="dairy8.png" alt="Soft Cheese" width="140" height="130">
+                <h3>Soft Cheese</h3>
+                <h3>1-KG 820/-</h3>
+                <p>Upto 28% Off</p>
+                <button onclick="addToCart('dairy8.png', 'Soft Cheese',)">Add to Cart</button>
+                <button onclick="buyNow('dairy8.png', 'Soft Cheese')">Buy Now</button>
+            </div>
+            <!-- Add other items similarly -->
+        </div>
+    </section>
+
+    <script>
+        function addToCart(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'test2.html';
+        }
+
+        function buyNow(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

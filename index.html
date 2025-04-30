@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Logo.png">
+    <title>Veggie Market</title>
+</head>
+<style>
+.categories .box-container .box:hover
+{
+    box-shadow: 1px 1px 10px 4px rgb(120, 236, 4);
+    transform: scale(0.9);
+    z-index: 2;
+}
+
+.categories .box-container .box img
+{
+    margin: 1.5rem 0;
+
+}
+.categories .box-container .box h3
+{
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    color: var(--bl);
+}
+
+.box button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px 0;
+}
+
+.box button:hover {
+    background-color: #d32f2f;
+}
+
+.box button a {
+    color: white;
+    text-decoration: none;
+}
+
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 2rem;
+    font-size: 3.5rem;
+    color: black;
+}
+    .heading span
+{
+    background-color: green;
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%,100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+</style>
+<body>
+    <!-- Side Navigation for Mobile -->
+    <div id="mySidenav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="UI Reg.html">Registration</a>
+        <a href="UI log.html">Login</a>
+        <a href="UI offers5.html">Offers</a>
+        <a href="UI AboutUs6.html">About Us</a>
+        <a href="UI Cont.html">Contact</a>
+        <a href="https://www.google.com/maps/place/PACE+Institute+of+Technology+%26+Sciences+(Autonomous)/@15.430368,80.0406891,17z">My Address</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> Veggie Market
+        </div>
+        <div class="menu-toggle" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="UI Reg.html">Registration</a></li>
+            <li><a href="UI log.html">Login</a></li>
+            <li><a href="UI offers5.html">Offers</a></li>
+            <li><a href="UI AboutUs6.html">About Us</a></li>
+            <li><a href="UI Cont.html">Contact</a></li>
+            <li><a href="https://www.google.com/maps/place/PACE+Institute+of+Technology+%26+Sciences+(Autonomous)/@15.430368,80.0406891,17z">My Address</a></li>
+        </ul>
+    </nav>
+
+    <!-- Marquee Section -->
+    <marquee width="100%" id="scroll">
+        🌽🥕 <strong>Fresh Harvest Sale at Your Local Veggie Market!</strong> 🥦🍅 
+        ⭕️ Limited-Time Offer: Don't Miss Out! ⭕️ 
+        Get the freshest, most delicious vegetables at unbeatable prices! 
+        🛒 Hurry, stock up on healthy, nutritious veggies for your family today!
+    </marquee>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h1 class="heading"> Product <span>Categories</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="Img1.png" alt="Tomato" width="150" height="120">
+                <h3>Vegetables</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI vegitable7.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img2.png" alt="FreshFruits" width="150" height="120">
+                <h3>Fresh Fruits</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI Fruits8.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img3.png" alt="DairyProducts" width="160" height="120">
+                <h3>Dairy Products</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI DairyPro9.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img4.png" alt="Fresh Meat" width="150" height="120">
+                <h3>Fresh Meat</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI Meet10.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img5.png" alt="Grocery" width="150" height="120">
+                <h3>Grocery</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI Grocery11.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img6.png" alt="Cool Drinks" width="150" height="120">
+                <h3>Cool Drinks</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI Cool Drinks12.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img7.png" alt="Dry Fruits" width="150" height="120">
+                <h3>Dry Fruits</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI DryFruits12.html">Shop Now</a></button>
+            </div>
+            <div class="box">
+                <img src="Img8.png" alt="KurKures" width="150" height="120">
+                <h3>Package Food</h3>
+                <p>Upto 45% Off</p>
+                <button><a href="UI KurKure13.html">Shop Now</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="footer-container">
+          <!-- Social Section -->
+          <div class="footer-box">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/bhanu.chilakala" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon> Facebook
+              </a>
+              <a href="https://x.com/TlgBunny" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon> Twitter
+              </a>
+              <a href="https://www.instagram.com/_mr_icon____" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon> Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/bhanu-prakash-chilakala-512104266" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+              </a>
+            </div>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><ion-icon name="call-outline"></ion-icon> +91 8522817622</p>
+            <p><ion-icon name="call-outline"></ion-icon> +91 8374946625</p>
+            <p><ion-icon name="mail-outline"></ion-icon> bhanuchilakala2@gmail.com</p>
+            <p><ion-icon name="location-outline"></ion-icon> Ongole, India - 523157</p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Offers</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">About Us</a>
+            <a href="#">My Address</a>
+          </div>
+      
+          <!-- Newsletter -->
+          <div class="footer-box">
+            <h3>Newsletter</h3>
+            <p>Subscribe for latest updates</p>
+            <input type="email" placeholder="Your email" class="email">
+            <input type="submit" value="Subscribe" class="btn">
+            <img src="visa.png" alt="Payment Methods" class="payment-img">
+          </div>
+        </div>
+      
+        <div class="footer-credit">
+            &copy; Created by Bhanu Prakash Chilakala | All rights reserved
+        </div>
+      </section>
+      
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Hamburger Toggle Script -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>

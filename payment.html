@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="UI_cart.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .payment-method img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #f44336;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-group button:hover {
+            background-color: #d32f2f;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #888;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .message.show {
+            opacity: 1;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Choose Payment Method</h1>
+        <div class="payment-methods">
+            <div class="payment-method" onclick="selectPayment('card')">
+                <img src="credit-icon.png" alt="Card Payment">
+                <p>Card Payment</p>
+            </div>
+            <div class="payment-method" onclick="selectPayment('upi')">
+                <img src="upi-icon.png" alt="UPI Payment">
+                <p>UPI</p>
+            </div>
+            <div class="payment-method" onclick="selectPayment('cod')">
+                <img src="cashon delavery-icon.webp" alt="Cash on Delivery">
+                <p>Cash on Delivery</p>
+            </div>
+        </div>
+
+        <div id="card-payment" style="display: none;">
+            <div class="input-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="Enter your card number">
+            </div>
+            <div class="input-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY">
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="Enter CVV">
+            </div>
+        </div>
+
+        <div id="upi-payment" style="display: none;">
+            <div class="input-group">
+                <label for="upi-id">UPI ID</label>
+                <input type="text" id="upi-id" placeholder="Enter your UPI ID">
+            </div>
+        </div>
+
+        <div id="cod-payment" style="display: none;">
+            <p>No additional information required for Cash on Delivery.</p>
+        </div>
+
+        <div class="button-group">
+            <button onclick="processPayment()">Pay Now</button>
+        </div>
+        <div id="message" class="message">
+            Payment successful! Thank you for your purchase.
+        </div>
+    </div>
+
+    <script>
+        function selectPayment(method) {
+            document.querySelectorAll('.payment-method').forEach(element => {
+                element.style.border = 'none';
+            });
+
+            document.getElementById(method + '-payment').style.display = 'block';
+            document.getElementById('message').classList.remove('show');
+        }
+
+        function processPayment() {
+            // Add your payment processing logic here
+            // This function can vary depending on your backend implementation
+            document.getElementById('message').classList.add('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <script>
+                function loginvalidation(){
+                var fullname = document.myform.fullname.value;
+                var phno = document.myform.phno.value;
+                var messge = document.myform.mytest.value;
+                var myemail=document.myform.email.value;  
+                var atposition=myemail.indexOf("@");  
+                var dotposition=myemail.lastIndexOf("."); 
+                
+                
+                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=myemail.length){  
+                alert("Please enter a valid e-mail address")
+                return false;  
+                }  
+
+
+
+                else if(fullname==null || fullname==""){
+                    alert("Plase enter name ")
+                    return false;
+
+
+                }
+                else if(phno.length<10){
+                    alert("Phone number is minimum 10 digits")
+                    return false;
+                }
+
+                else if(messge ==""){
+                alert("Message box empty") 
+                return false;
+            }
+        }
+            
+            </script>
+        </head>
+        <body>
+            
+        </body>
+        </html>
+        <link rel="stylesheet" href="style4.css">
+        <title>
+            UI Pages
+        </title>
+    </head>
+    <body>
+        <nav>
+            <form name="myform" action="UI Home page3.html" onsubmit="return loginvalidation(this)">
+            <li><a id="Home" href="UI Home page3.html">Home</a></li>
+         </nav>
+        <div>
+        <h1>CONTACT US</h1>
+        Full Name:<br><input type="text" name="fullname" placeholder="Full Name"><br><br>
+        Phone Number:<br><input type="text" name="phno" placeholder="PH Number"><br><br>
+        Email:<br><input type="text" name="email" placeholder="Email"><br><br>
+        Any Queries<br>
+        <textarea name="mytest" height="20" widhth="35" placeholder="100 characters only"></textarea><br>
+        <br>
+        <input id="sub" type="Submit">
+        </div>
+    </form>
+    </body>
+</html>

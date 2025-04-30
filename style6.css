@@ -1,0 +1,157 @@
+body {
+    background-color: rgb(195, 187, 187);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    overflow: hidden; /* Important to contain floats */
+}
+
+.content-section {
+    float: left;
+    width: 55%;
+}
+
+.image-section {
+    float: right;
+    width: 40%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding-top: 20%;
+}
+
+.content-section .title {
+    text-transform: uppercase;
+    font-size: 28px;
+    text-align: center;
+}
+
+.content-section .content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 21px;
+    text-align: center;
+}
+
+.content-section .content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.content-section .content .button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.content-section .content .button a {
+    background-color: #3d3d3d;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.content-section .content .button a:hover {
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+.content-section .social {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content-section .social i {
+    color: #a52a2a;
+    font-size: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.content-section .social i:hover {
+    color: #7a1c1c;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding-top: 50px;
+    }
+
+    .content-section, .image-section {
+        width: 100%;
+        float: none;
+        padding: 0;
+    }
+
+    .image-section img {
+        padding-top: 20px;
+    }
+
+    .content-section .title {
+        font-size: 24px;
+    }
+
+    .content-section .content h3 {
+        font-size: 20px;
+    }
+
+    .content-section .content p {
+        font-size: 16px;
+    }
+
+    .content-section .content .button a {
+        padding: 10px 30px;
+        font-size: 18px;
+    }
+
+    .content-section .social i {
+        font-size: 25px;
+        padding: 5px;
+    }
+}
+
+/* Even more responsiveness for very small screens */
+@media screen and (max-width: 480px) {
+    .content-section .title {
+        font-size: 20px;
+    }
+
+    .content-section .content h3 {
+        font-size: 18px;
+    }
+
+    .content-section .content p {
+        font-size: 15px;
+    }
+
+    .content-section .content .button a {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+    .content-section .social i {
+        font-size: 22px;
+    }
+}

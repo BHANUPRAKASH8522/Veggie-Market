@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script>
+            function loginvalidation(){
+            var uname = document.myform.uname.value;
+            var pass = document.myform.pass.value;
+            if(uname==null || uname==""){
+                alert("The blank is empty")
+                return false;
+            }
+            else if(pass.length<6){
+                alert("Password min 6 digits")
+                return false;
+            }
+            return true;
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    <link rel="stylesheet" href="style1.css">
+    <title>
+        Vegi Market
+    </title>
+    
+        
+</head>
+
+<body>
+    
+    <nav>
+        
+            <li><a id="Home" href="UI Home page3.html">Home</a></li>
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="Video.mp4" type="video/mp4">
+        
+    </nav>
+    <form name="myform" action="UI Home page3.html" onsubmit="return loginvalidation(this)">
+        
+
+    <div id="style">
+        
+        <h3>SIGN IN!</h3>
+        User Name:<br><input type="text" name="uname" placeholder="User Name"><br><br>
+        Password:<br><input type="password" name="pass" placeholder="Password"><br><br>
+        <input id="sub" type="submit">
+
+
+        
+    </div>
+</form>
+</body>
+
+</html>

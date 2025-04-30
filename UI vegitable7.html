@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .categories {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .heading span {
+            color: #f6f4f3;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .box img:hover {
+            transform: scale(1.05);
+        }
+
+        .box h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .box p {
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+
+        .box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .box button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Categories */
+        .categories .box-container {
+            border: 0px solid;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .categories .box-container .box {
+            padding: 2rem 0;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            background: #fff;
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+            outline: 0.5px;
+            outline-offset: 1.5rem;
+            text-align: center;
+            transition: 0.6s;
+        }
+
+        .categories .box-container .box:hover {
+            box-shadow: 1px 1px 10px 4px rgb(120, 236, 4);
+            transform: scale(0.9);
+            z-index: 2;
+        }
+
+        .categories .box-container .box img {
+            margin: 1.5rem 0;
+        }
+
+        .categories .box-container .box h3 {
+            padding-left: 1rem;
+            font-size: 1.5rem;
+            color: var(--bl);
+        }
+
+        .heading {
+            text-align: center;
+            padding: 2rem 0;
+            padding-bottom: 2rem;
+            font-size: 3.5rem;
+            color: black;
+        }
+
+        .heading span {
+            background-color: green;
+            color: #fff;
+            display: inline-block;
+            padding: .5rem 3rem;
+            clip-path: polygon(100% 0, 93% 50%,100% 99%, 0% 100%, 7% 50%, 0% 0%);
+        }
+
+        button {
+            margin-left: 11px;
+            border-radius: 10px;
+            padding: 11px;
+            width: 100px;
+        }
+
+        button a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        /* Mobile View (General Styles) */
+        @media (max-width: 768px) {
+            .categories .box-container {
+                display: block;
+                padding: 10px;
+            }
+
+            .categories .box-container .box {
+                width: 100%;
+                margin: 10px 0;
+                padding: 1rem;
+            }
+
+            .categories .box-container .box h3 {
+                font-size: 1.2rem;
+                padding-left: 0;
+            }
+
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .heading span {
+                padding: .5rem 2rem;
+                font-size: 1.4rem;
+            }
+
+            button {
+                width: 90%;
+                margin-left: 0;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            button a {
+                font-size: 14px;
+            }
+        }
+
+        /* Small Devices (Mobile Portrait) */
+        @media (max-width: 480px) {
+            .categories .box-container {
+                padding: 5px;
+            }
+
+            .categories .box-container .box {
+                width: 100%;
+                margin: 10px 0;
+                padding: 1rem;
+            }
+
+            .categories .box-container .box h3 {
+                font-size: 1rem;
+            }
+
+            .heading {
+                font-size: 2rem;
+            }
+
+            .heading span {
+                padding: .5rem 1.5rem;
+                font-size: 1.2rem;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+
+        /* Extra Small Devices (Mobile Landscape) */
+        @media (max-width: 360px) {
+            .categories .box-container .box {
+                padding: 0.5rem;
+            }
+
+            .categories .box-container .box h3 {
+                font-size: 1rem;
+            }
+
+            .heading {
+                font-size: 1.8rem;
+            }
+
+            .heading span {
+                padding: .5rem 1rem;
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            button a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="categories" id="categories">
+        <h1 class="heading">Fruit <span>Section</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="fruit1.png" alt="Strawberry" width="110" height="120">
+                <h3>Strawberry</h3>
+                <h3>1-KG 200/-</h3>
+                <p>Upto 65% Off</p>
+                <button onclick="addToCart('fruit1.png', 'Strawberry')">Add to Cart</button>
+                <button onclick="buyNow('fruit1.png', 'Strawberry')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit2.png" alt="Watermelon" width="160" height="120">
+                <h3>Watermelon</h3>
+                <h3>1-KG 40/-</h3>
+                <p>Upto 45% Off</p>
+                <button onclick="addToCart('fruit2.png', 'Watermelon')">Add to Cart</button>
+                <button onclick="buyNow('fruit2.png', 'Watermelon')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit3.png" alt="Apple" width="130" height="120">
+                <h3>Apple</h3>
+                <h3>1-KG 99/-</h3>
+                <p>Upto 12% Off</p>
+                <button onclick="addToCart('fruit3.png', 'Apple')">Add to Cart</button>
+                <button onclick="buyNow('fruit3.png', 'Apple')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit4.png" alt="Banana" width="150" height="120">
+                <h3>Banana</h3>
+                <h3>1-dozen 50/-</h3>
+                <p>Upto 12% Off</p>
+                <button onclick="addToCart('fruit4.png', 'Banana')">Add to Cart</button>
+                <button onclick="buyNow('fruit4.png', 'Banana')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit5.png" alt="Orange" width="140" height="120">
+                <h3>Orange</h3>
+                <h3>1-KG 60/-</h3>
+                <p>Upto 24% Off</p>
+                <button onclick="addToCart('fruit5.png', 'Orange')">Add to Cart</button>
+                <button onclick="buyNow('fruit5.png', 'Orange')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit6.png" alt="Grapes" width="140" height="120">
+                <h3>Grapes</h3>
+                <h3>1-KG 69/-</h3>
+                <p>Upto 25% Off</p>
+                <button onclick="addToCart('fruit6.png', 'Grapes')">Add to Cart</button>
+                <button onclick="buyNow('fruit6.png', 'Grapes')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit7.png" alt="Papaya" width="140" height="120">
+                <h3>Papaya</h3>
+                <h3>1-KG 40/-</h3>
+                <p>Upto 35% Off</p>
+                <button onclick="addToCart('fruit7.png', 'Papaya')">Add to Cart</button>
+                <button onclick="buyNow('fruit7.png', 'Papaya')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="fruit8.png" alt="Mango" width="140" height="130">
+                <h3>Mango</h3>
+                <h3>1-KG 90/-</h3>
+                <p>Upto 28% Off</p>
+                <button onclick="addToCart('fruit8.png', 'Mango')">Add to Cart</button>
+                <button onclick="buyNow('fruit8.png', 'Mango')">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function addToCart(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'test2.html';
+        }
+
+        function buyNow(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

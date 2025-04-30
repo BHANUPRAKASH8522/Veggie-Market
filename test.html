@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Footer Redesign</title>
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer .box {
+    flex: 1;
+    min-width: 250px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.footer .box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #f4b400;
+}
+
+.footer .box h3::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #f4b400;
+    display: block;
+    margin: 0.5rem auto 1rem;
+    transition: width 0.3s;
+}
+
+.footer .box h3:hover::after {
+    width: 100px;
+}
+
+.footer .share .icon {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    justify-content: center;
+}
+
+.footer .share .icon ion-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.footer .share .icon a {
+    color: #f4b400;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .share .icon:hover ion-icon {
+    color: #e69500;
+}
+
+.footer .share .icon:hover a {
+    color: #e69500;
+}
+
+.footer .box a {
+    color: #f4b400;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.footer .box a:hover {
+    color: #e69500;
+}
+
+.footer .box .email,
+.footer .box .btn {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer .box .email {
+    background-color: #555;
+    color: #fff;
+}
+
+.footer .box .btn {
+    background-color: #f4b400;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer .box .btn:hover {
+    background-color: #e69500;
+}
+
+.footer .box .payment-img {
+    width: 100px;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer .credit {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.footer .credit span {
+    color: #f4b400;
+}
+
+    </style>
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Follow Us <i class="fas fa-shopping-basket"></i></h3>
+                <div class="share">
+                    <span class="icon"><ion-icon name="logo-facebook"></ion-icon><a href="https://www.facebook.com/bhanu.chilakala?mibextid=ZbWKwL" class="fab fa-facebook-f">Facebook</a></span>
+                    <span class="icon"><ion-icon name="logo-twitter"></ion-icon><a href="https://x.com/TlgBunny?t=AzdZBEMg_goGZWBFrh-uEg&s=09" class="fab fa-twitter">Twitter</a></span>
+                    <span class="icon"><ion-icon name="logo-instagram"></ion-icon><a href="https://www.instagram.com/_mr_icon____?igsh=ZGUzMzM3NWJiOQ==" class="fab fa-instagram">Instagram</a></span>
+                    <span class="icon"><ion-icon name="logo-linkedin"></ion-icon><a href="https://www.linkedin.com/in/bhanu-prakash-chilakala-512104266/overlay/background-image/" class="fab fa-linkedin">LinkedIn</a></span>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Contact Us</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +91 8522817622</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +91 8374946625</a>
+                <a href="#" class="links"><i class="fas fa-envelope"></i> bhanuchilakala2@gmail.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Ongole, India - 523157</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> Home</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> Offers</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> Products</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> Categories</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> About Us</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> My Address</a>
+            </div>
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest updates</p>
+                <form>
+                    <input type="email" placeholder="Your email" class="email">
+                    <input type="submit" value="Subscribe" class="btn">
+                </form>
+                <img src="visa.png" class="payment-img" alt="Payment">
+            </div>
+        </div>
+        <div class="credit">Created by <span>Veggi Market</span> | All rights reserved</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("Img1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #6f6666;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+/* SIDE NAVIGATION */
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav a {
+    padding: 8px 32px;
+    display: block;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    background-color: #575757;
+}
+
+.side-nav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+}
+
+/* CATEGORIES */
+.categories {
+    padding: 2rem;
+}
+
+/* Category Heading Background */
+.categories h2 {
+    background-color: #ff6347; /* Background color for the heading */
+    color: white; /* Text color for the heading */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+}
+
+.categories .box {
+    padding: 2rem;
+    background: #fff;
+    color: black;
+    border-radius: .5rem;
+    text-align: center;
+    transition: 0.6s;
+}
+
+.categories .box:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.categories .box img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.categories .box h3 {
+    margin: 15px 0;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 24px;
+    background-color: #ff6347; /* Original button color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e5533f; /* Hover color */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+.btn:active {
+    background-color: #d94b3a; /* Active color */
+    transform: scale(1);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #2c2c2c;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    width: 23%;
+    margin-bottom: 20px;
+}
+
+.footer-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.footer-box a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+}
+
+.footer-box a:hover {
+    color: #ddd;
+}
+
+.footer-box .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-box .social-icons a:hover {
+    color: #ddd;
+}
+
+.footer-box .email {
+    padding: 10px;
+    margin-top: 15px;
+    width: 80%;
+    font-size: 1rem;
+}
+
+.footer-box .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347; /* Button color in footer */
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-box .btn:hover {
+    background-color: #e5533f; /* Hover color for footer button */
+}
+
+.footer-box .payment-img {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 250px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .side-nav a {
+        font-size: 1.2rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-box {
+        width: 100%;
+        text-align: center;
+    }
+}

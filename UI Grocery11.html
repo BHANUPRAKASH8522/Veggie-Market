@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style7.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .categories {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .heading span {
+            color: #f6f4f3;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .box img:hover {
+            transform: scale(1.05);
+        }
+
+        .box h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .box p {
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+
+        .box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .box button a {
+            color: white;
+            text-decoration: none;
+        }
+
+         /* Tablet Devices */
+@media (max-width: 768px) {
+    .categories .box-container {
+        display: block;
+        padding: 10px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .heading span {
+        padding: .5rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    button {
+        width: 90%;
+        margin-left: 0;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .categories .box-container {
+        padding: 5px;
+    }
+
+    .categories .box-container .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .heading span {
+        padding: .5rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Smallest Devices (Landscape phones like 360px width) */
+@media (max-width: 360px) {
+    .categories .box-container .box {
+        padding: 0.5rem;
+    }
+
+    .categories .box-container .box h3 {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .heading span {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button a {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="categories" id="categories">
+        <h1 class="heading">Grocery <span>Section</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="grocery1.png" alt="Rice" width="110" height="120">
+                <h3>Rice</h3>
+                <h3>1-KG 40/-</h3>
+                <p>Upto 15% Off</p>
+                <button onclick="addToCart('grocery1.png', 'Rice',)">Add to Cart</button>
+                <button onclick="buyNow('grocery1.png', 'Rice')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="grocery2.png" alt="Sunflower Oil" width="140" height="120">
+                <h3>Sunflower Oil</h3>
+                <h3>1-KG 140/-</h3>
+                <p>Upto 15% Off</p>
+                <button onclick="addToCart('grocery2.png', 'Sunflower Oil')">Add to Cart</button>
+                <button onclick="buyNow('grocery2.png', 'Sunflower Oil')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="grocery3.png" alt="Aashirvaad Atta" width="110" height="120">
+                <h3>Aashirvaad Atta</h3>
+                <h3>1-KG 50/-</h3>
+                <p>Upto 5% Off</p>
+                <button onclick="addToCart('grocery3.png', 'Aashirvaad Atta')">Add to Cart</button>
+                <button onclick="buyNow('grocery3.png', 'Aashirvaad Atta')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="grocery4.png" alt="Massor" width="120" height="120">
+                <h3>Massor</h3>
+                <h3>1-KG 60/-</h3>
+                <p>Upto 12% Off</p>
+                <button onclick="addToCart('grocery4.png', 'Massor')">Add to Cart</button>
+                <button onclick="buyNow('grocery4.png', 'Massor')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="grocery5.png" alt="Toor" width="100" height="120">
+                <h3>Toor</h3>
+                <h3>1-KG 65/-</h3>
+                <p>Upto 14% Off</p>
+                <button onclick="addToCart('grocery5.png', 'Toor',)">Add to Cart</button>
+                <button onclick="buyNow('grocery5.png', 'Toor')">Buy Now</button>
+            </div>
+
+
+
+            <div class="box">
+                <img src="grocery6.png" alt="Urad Dal" width="100" height="120">
+                <h3>Urad Dal</h3>
+                <h3>1-KG 89/-</h3>
+                <p>Upto 25% Off</p>
+                <button onclick="addToCart('grocery6.png', 'Urad Dal',)">Add to Cart</button>
+                <button onclick="buyNow('grocery6.png', 'Urad Dal')">Buy Now</button>
+            </div>
+
+            <div class="box">
+                <img src="grocery7.png" alt="Ragi Flor" width="130" height="120">
+                <h3>Ragi Flor</h3>
+                <h3>1-KG 40/-</h3>
+                <p>Upto 35% Off</p>
+                <button onclick="addToCart('grocery7.png', 'Ragi Flor',)">Add to Cart</button>
+                <button onclick="buyNow('grocery7.png', 'Ragi Flor')">Buy Now</button>
+            </div>
+
+
+            <div class="box">
+                <img src="grocery8.png" alt="Cauliflower" width="120" height="130">
+                <h3>Idli Rava</h3>
+                <h3>1-KG 39/-</h3>
+                <p>Upto 28% Off</p>
+                <button onclick="addToCart('grocery8.png', 'Cauliflower',)">Add to Cart</button>
+                <button onclick="buyNow('grocery8.png', 'Cauliflower')">Buy Now</button>
+            </div>
+            <!-- Add other items similarly -->
+        </div>
+    </section>
+
+    <script>
+        function addToCart(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'test2.html';
+        }
+
+        function buyNow(image, title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ image: image, title: title });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>
